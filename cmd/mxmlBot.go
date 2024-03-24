@@ -19,8 +19,9 @@ var (
 
 // mxmlBotCmd represents the mxmlBot command
 var mxmlBotCmd = &cobra.Command{
-	Use:   "mxmlBot",
-	Short: "A brief description of your command",
+	Use:     "mxmlBot",
+	Aliases: []string{"start"},
+	Short:   "A brief description of your command",
 	Long: `A longer description that spans multiple lines and likely contains examples
 and usage of using your command. For example:
 
