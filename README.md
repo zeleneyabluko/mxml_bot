@@ -2,7 +2,7 @@
 
 This is a learning project
 It contains the Telegram bot written in Go through the use of cobra-cli framework.
-(work in progress, it doesn't does anything useful so far)
+(work in progress, it doesn't do anything useful so far)
 
 Commands available:
 
