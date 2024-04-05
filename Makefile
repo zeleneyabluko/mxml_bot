@@ -1,2 +1,2 @@
 format:
-      gofmt -s -w ./
+    gofmt -s -w ./
