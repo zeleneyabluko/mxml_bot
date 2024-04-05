@@ -18,7 +18,7 @@ var (
 )
 
 var (
-	appVersion = "Version"
+	appVersion = os.Getenv("VERSION")
 )
 
 // mxmlBotCmd represents the mxmlBot command
