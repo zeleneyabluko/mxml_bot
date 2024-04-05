@@ -10,7 +10,7 @@ format:
 lint:
 	golint
 
-test:
+get:
 	go test -v
 
 get:
@@ -29,3 +29,4 @@ push:
 
 clean:
 	rm -rf mxml_bot
+	docker rmi $(REGISTRY)/$(APP):$(VERSION)-$(TARGETARCH)
