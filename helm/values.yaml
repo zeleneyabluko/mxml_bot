@@ -1,0 +1,17 @@
+# Default values for helm.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  # вказуємо поточку назву докер хаб акаунту де зберігаються іміджі  
+  repository: svitlanadmytrenko
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "v.1.0.5-7dcdaf2"
+  arch: "arm64"
+
+secret:
+  name: mxmlbot
+  tokenKey: 7152286359:AAF9HQX2RW4qsHEIE_DZfCXAc_5oFqsNvBY
+  tokenName: TELE_TOKEN
