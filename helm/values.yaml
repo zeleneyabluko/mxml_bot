@@ -13,5 +13,5 @@ image:
 
 secret:
   name: mxmlbot
-  tokenKey: 7152286359:AAF9HQX2RW4qsHEIE_DZfCXAc_5oFqsNvBY
+  tokenKey: token
   tokenName: TELE_TOKEN

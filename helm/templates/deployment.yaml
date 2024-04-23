@@ -47,11 +47,12 @@ spec:
             valueFrom:
               secretKeyRef:
                 key: {{ .Values.secret.tokenKey}}
-                name: {{ .Values.secret.key}}
+                name: {{ .Values.secret.name}}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
               protocol: TCP
+              containerPort: 80
           livenessProbe:
             {{- toYaml .Values.livenessProbe | nindent 12 }}
           readinessProbe:
