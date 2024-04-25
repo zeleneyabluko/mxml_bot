@@ -15,6 +15,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-# наступним кроком запустимо команду make test, зробимо коміт та подивимось як це працює
-      - name: Run test
-        run: make test
+# наступним кроком запустимо команду make build, зробимо коміт та подивимось як це працює
+      - name: Build the project lalala
+        run: make build

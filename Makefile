@@ -2,7 +2,7 @@ VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HE
 APP=$(shell basename $(shell git remote get-url origin))
 TARGETOS=linux
 REGISTRY=svitlanadmytrenko
-TARGETARCH=arm64
+TARGETARCH=amd64
 
 format:
 	gofmt -s -w ./
