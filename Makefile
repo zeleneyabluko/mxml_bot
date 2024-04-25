@@ -10,7 +10,7 @@ format:
 lint:
 	golint
 
-get:
+test:
 	go test -v
 
 get:
