@@ -22,8 +22,8 @@ build: format get
 	
 image:
 	echo "check for version!"
-	echo $(git describe --tags --abbrev=0)
-	echo $(git rev-parse --short HEAD)
+	git describe --tags --abbrev=0
+	git rev-parse --short HEAD
 	docker build . -t $(REGISTRY)/$(APP):$(VERSION)-$(TARGETARCH)
 
 push:
