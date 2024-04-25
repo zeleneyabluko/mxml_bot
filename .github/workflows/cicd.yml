@@ -32,5 +32,5 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.TOKEN }}
       
-      - name: Push the image to repository lala
+      - name: Push the image to repository
         run: make push
