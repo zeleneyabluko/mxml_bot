@@ -1,0 +1,20 @@
+name: deploy
+
+# Визначимо подію, яка запустить виконання workflow процесу.
+on:
+    push:
+      branches:
+        - develop
+
+# блок задач який налаштовано на запуск завдання на новій ВМ з останньою версією ubuntu
+jobs:
+  ci:
+    name: CI
+    runs-on: ubuntu-latest
+# перший крок задачі дозволить запускати на ранері репозиторій із скриптами для виконання дії. 
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+# наступним кроком запустимо команду make build, зробимо коміт та подивимось як це працює
+      - name: Build the project lalalala
+        run: make build
