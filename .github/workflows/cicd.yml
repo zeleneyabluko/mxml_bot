@@ -22,5 +22,5 @@ jobs:
       - name: Create the image
         run: make image
       
-      - name: Push the image to repository
+      - name: Push the image to repository lala
         run: make push
