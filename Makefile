@@ -21,9 +21,8 @@ build: format get
 	CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build -v -o mxml_bot -ldflags "-X="github.com/zeleneyabluko/mxml_bot/cmd.appVersion=${VERSION}
 	
 image:
-	echo "check for version!"
-	git describe --tags --abbrev=0
-	git rev-parse --short HEAD
+
+	echo $VERSION
 	docker build . -t $(REGISTRY)/$(APP):$(VERSION)-$(TARGETARCH)
 
 push:
