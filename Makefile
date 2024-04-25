@@ -1,7 +1,7 @@
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
 APP=$(shell basename $(shell git remote get-url origin))
 TARGETOS=linux
-REGISTRY=svitlanadmytrenko
+REGISTRY=ghcr.io/zeleneyabluko
 TARGETARCH=arm64
 
 format:
