@@ -22,7 +22,7 @@ build: format get
 	
 image:
 
-	echo $VERSION
+	echo ${VERSION}
 	docker build . -t $(REGISTRY)/$(APP):$(VERSION)-$(TARGETARCH)
 
 push:
