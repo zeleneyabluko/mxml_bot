@@ -55,22 +55,13 @@ jobs:
         git config user.name github-actions
         git config user.email github-actions@github.com
 
-    - name: Getting ArgoCD Helm chart
-      run: |
-        git config user.name github-actions
-        git config user.email github-actions@github.com
-        git clone https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd
-        helm package ./charts/argo-cd
-
-
-
     - name: Installing ArgoCD
       uses: 'deliverybot/helm@v1'
       with:
         release: 'argo-cd'
-        namespace: 'default'
-        chart: 'app'
-        token: '${{ github.token }}'
+        namespace: 'argocd'
+        chart: 'argo-cd'
+        token: '${{ secrets.TOKEN }}'
         values: |
           name: foobar
         value-files: >-
