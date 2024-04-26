@@ -6,10 +6,10 @@ replicaCount: 1
 
 image:
   # вказуємо поточку назву докер хаб акаунту де зберігаються іміджі  
-  repository: svitlanadmytrenko
+  repository: ghcr.io/zeleneyabluko
   # Overrides the image tag whose default is the chart appVersion.
   tag: "v.1.0.5-7dcdaf2"
-  arch: "arm64"
+  arch: "amd64"
 
 secret:
   name: mxmlbot
