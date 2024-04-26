@@ -56,21 +56,10 @@ jobs:
         git config user.email github-actions@github.com
 
     - name: Installing ArgoCD
-      uses: 'deliverybot/helm@v1'
-      with:
-        release: 'argo-cd'
-        namespace: 'argocd'
-        chart: 'argo-cd'
-        token: '${{ secrets.TOKEN }}'
-        values: |
-          name: foobar
-        value-files: >-
-          [
-          "values.yaml", 
-          "values.production.yaml"
-          ]
-      env:
-        KUBECONFIG_FILE: '${{ secrets.KUBECONFIG }}' 
+      run:  |
+        kubectl create namespace argocd
+        kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+      
 
       
       
