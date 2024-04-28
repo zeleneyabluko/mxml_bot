@@ -3,14 +3,12 @@
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
-
 image:
   # вказуємо поточку назву докер хаб акаунту де зберігаються іміджі  
   repository: ghcr.io/zeleneyabluko
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v.1.0.5-7dcdaf2"
+  tag: "v1.0.6-d5c521a"
   arch: "amd64"
-
 secret:
   name: mxmlbot
   tokenKey: token
