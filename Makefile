@@ -31,4 +31,4 @@ push:
 
 clean:
 	rm -rf mxml_bot
-	docker rmi $(REGISTRY)/$(APP):$(VERSION)-$(TARGETARCH)
+	docker rmi $(REGISTRY)/$(APP):$(VERSION)-$(TARGETOS)-$(TARGETARCH)
