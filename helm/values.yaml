@@ -7,7 +7,7 @@ image:
   registry: ghcr.io
   repository: zeleneyabluko/mxml_bot
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "1.0.6-9622f29"
+  tag: "1.0.6-e892ab4"
   os: "linux"
   arch: "amd64"
 secret:
