@@ -15,6 +15,45 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-# наступним кроком запустимо команду make build, зробимо коміт та подивимось як це працює
-      - name: Build the project lalala
+        with: 
+          fetch-depth: 0
+
+          # наступним кроком запустимо команду make build, зробимо коміт та подивимось як це працює
+      - name: Build the project
         run: make build
+
+      - name: Create the image
+        run: make image
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.TOKEN }}
+      
+      - name: Push the image to repository
+        run: make push
+
+  cd:
+    name: CD
+    runs-on: ubuntu-latest
+    needs: ci
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with: 
+          fetch-depth: 0
+    - run: echo "VERSION=$(git describe --tags --abbrev=0)-$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+
+    - name: Updating version in values.yaml
+      uses: mikefarah/yq@master
+      with:
+        cmd: yq -i '.image.tag=strenv(VERSION)' ./helm/values.yaml
+    - run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git add .
+          git commit -m "Update values.yaml"
+          git push
