@@ -18,7 +18,7 @@ jobs:
         with: 
           fetch-depth: 0
 
-          # наступним кроком запустимо команду make build, зробимо коміт та подивимось як це працює
+         
       - name: Build the project
         run: make build
 
