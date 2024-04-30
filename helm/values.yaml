@@ -7,7 +7,7 @@ image:
   # вказуємо поточку назву докер хаб акаунту де зберігаються іміджі  
   repository: ghcr.io/zeleneyabluko
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "1.0.6-d863f46"
+  tag: "1.0.6-740d3a5"
   os: "linux"
   arch: "amd64"
 secret:
